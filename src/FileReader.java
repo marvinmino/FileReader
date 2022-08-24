@@ -31,38 +31,24 @@ class FileReader {
     }
 
     public int getNumberOfCities(){
-        int count = 0;
-        int maxCount = 0;
         User[] usersArray = _users.toArray(new User[0]);
-        for(int i = 0; i < usersArray.length; i++){
-            for(int j = 0; j < usersArray.length; j++){
-                if(usersArray[i].get_city().equals(usersArray[j].get_city())){
-                    count++;
-                }
+        ArrayList<String> distinctNames = new ArrayList<String>();
+        for(int i = 0; i < usersArray.length; i++) {
+            if (distinctNames.indexOf(usersArray[i].get_city()) == -1) {
+                distinctNames.add(usersArray[i].get_city());
             }
-            if(count > maxCount){
-                maxCount = count;
-            }
-            count = 0;
         }
-        return maxCount;
+        return distinctNames.size();
     }
 
     public int getNumberOfNames(){
-        int count = 0;
-        int maxCount = 0;
         User[] usersArray = _users.toArray(new User[0]);
-        for(int i = 0; i < usersArray.length; i++){
-            for(int j = 0; j < usersArray.length; j++){
-                if(usersArray[i].get_name().equals(usersArray[j].get_name())){
-                    count++;
-                }
+        ArrayList<String> distinctNames = new ArrayList<String>();
+        for(int i = 0; i < usersArray.length; i++) {
+            if (distinctNames.indexOf(usersArray[i].get_name()) == -1) {
+                distinctNames.add(usersArray[i].get_name());
             }
-            if(count > maxCount){
-                maxCount = count;
-            }
-            count = 0;
         }
-        return maxCount;
+        return distinctNames.size();
     }
 }
