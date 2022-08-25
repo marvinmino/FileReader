@@ -1,17 +1,17 @@
-public class User {
+public class Person {
     String _name;
     String _surname;
     String _city;
     String _address;
 
-    public User(String name, String surname, String city, String address){
+    public Person(String name, String surname, String city, String address){
         _name = name;
         _surname = surname;
         _city = city;
         _address = address;
     }
 
-    public User(String[] data){
+    public Person(String[] data){
         _name = data[0];
         _surname = data[1];
         _city = data[2];
